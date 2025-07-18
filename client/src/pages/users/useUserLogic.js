@@ -11,6 +11,7 @@ export default function useUserLogic() {
   const hasFetching = useRef(false);
 
   async function fetchUsers({ page = 1, limit = 10 }) {
+    console.log(import.meta.env);
     if (hasFetching.current) return;
     hasFetching.current = true;
     const response = await fetch(

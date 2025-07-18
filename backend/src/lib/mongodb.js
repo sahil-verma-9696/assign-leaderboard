@@ -1,9 +1,11 @@
 // lib/mongodb.js
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 export default async function connectDB() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/mongoose_test", {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
