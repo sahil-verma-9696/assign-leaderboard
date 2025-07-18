@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://assign-leaderboard-phi.vercel.app/",
+    origin: "https://assign-leaderboard-eight.vercel.app/",
     allowedHeaders: ["Content-Type", "Authorization"],
     methods: ["GET", "POST"],
   })
