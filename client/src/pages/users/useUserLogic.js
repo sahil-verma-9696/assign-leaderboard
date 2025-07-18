@@ -26,21 +26,27 @@ export default function useUserLogic() {
   }
 
   async function addUser(newUser) {
-    const res = await fetch("http://localhost:3000/v1/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: newUser,
-      }),
-    });
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_BASE_URL}/v1/users`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: newUser,
+        }),
+      }
+    );
   }
 
   async function claimPoints(userId) {
-    const res = await fetch(`http://localhost:3000/v1/claim?userId=${userId}`, {
-      method: "POST",
-    });
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_BASE_URL}/v1/claim?userId=${userId}`,
+      {
+        method: "POST",
+      }
+    );
   }
 
   function handleAddUser() {
