@@ -6,7 +6,9 @@ export default function History() {
 
   async function fetchHistory() {
     try {
-      const res = await fetch("http://localhost:3000/v1/history");
+      const res = await fetch(
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/v1/history`
+      );
       const data = await res.json();
       setHistory(data.payload);
     } catch (error) {

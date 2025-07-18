@@ -6,7 +6,7 @@ export default function Leaderboard() {
 
   async function fetchLeaderboard() {
     try {
-      const res = await fetch("http://localhost:3000/v1/leaderboard");
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_BASE_URL}/v1/leaderboard`);
       const data = await res.json();
       setUsers(data.payload);
     } catch (error) {
