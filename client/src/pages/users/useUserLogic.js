@@ -14,7 +14,9 @@ export default function useUserLogic() {
     if (hasFetching.current) return;
     hasFetching.current = true;
     const response = await fetch(
-      `http://localhost:3000/v1/users?page=${page}&limit=${limit}`
+      `${
+        import.meta.env.VITE_BACKEND_BASE_URL
+      }/v1/users?page=${page}&limit=${limit}`
     );
     const data = await response.json();
     setUsers(data.payload.users);
